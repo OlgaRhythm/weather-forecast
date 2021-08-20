@@ -1,6 +1,6 @@
 import React from "react";
 
-class Info extends React.Component {
+/*class Info extends React.Component {
     render() {
         return (
             <div>
@@ -8,6 +8,12 @@ class Info extends React.Component {
             </div>
         );
     }
-}
+}*/
+
+const Info = () => (
+    <div>
+        <h1>Приветствуем Вас в приложении</h1>
+    </div>
+);
 
 export default Info;
