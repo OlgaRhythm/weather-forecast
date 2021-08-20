@@ -2,6 +2,8 @@ import React from "react";
 import Info from "./components/Info"
 import Form from "./components/Form"
 import Weather from "./components/Weather"
+import LanguageButton from "./components/LanguageButton";
+import Time from "./components/Time";
 
 const API_KEY = "9bb0bc0370c0169cee7d8d8e2f8d7380";
 
@@ -47,7 +49,7 @@ class App extends React.Component {
         pressure: pressure,
         sunrise: sunrise_date,
         sunset: sunset_date,
-        error: "",
+        error: undefined,
       });
     } else {
       this.setState({
@@ -67,19 +69,32 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Info />
-        <Form weatherMethod={this.getWeather} />
-        <Weather
-          temp={this.state.temp}
-          city={this.state.city}
-          country={this.state.country}
-          pressure={this.state.pressure}
-          sunrise={this.state.sunrise}
-          sunset={this.state.sunset}
-          error={this.state.error}
-        />
+        <LanguageButton />
+        <Time />
+        <div className="wrapper">
+          <div className="main">
+            <div className="container">
+              <div className="row">
+                <div className="col-sm-5 info">
+                  <Info />
+                </div>
+                <div className="col-sm-7 form">
+                  <Form weatherMethod={this.getWeather} />
+                  <Weather
+                    temp={this.state.temp}
+                    city={this.state.city}
+                    country={this.state.country}
+                    pressure={this.state.pressure}
+                    sunrise={this.state.sunrise}
+                    sunset={this.state.sunset}
+                    error={this.state.error}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
     );
   };
 }
