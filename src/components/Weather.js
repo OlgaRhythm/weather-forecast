@@ -1,25 +1,31 @@
 import React from "react";
 
-/*class Weather extends React.Component {
+class Weather extends React.Component {
+    /*русский, english, deutsch*/
+    langCityCountry = ['Местоположение ', 'Location ', 'Lage '];
+    langTempure = ['Температура ', 'Temperature ', 'Temperatur ']
+    langPressure = ['Давление ', 'Pressure ', 'Druck '];
+    langSunrise = ['Рассвет ', 'Sunrise ', 'Dämmerung '];
+    langSunset = ['Закат ', 'Sunset ', 'Sonnenuntergangs '];
     render() {
         return (
             <div>
                 <p>{this.props.error}</p>
                 {this.props.city &&
                     <div>
-                        <p>Местоположение {this.props.city}, {this.props.country}</p>
-                        <p>Температура {this.props.temp}</p>
-                        <p>Давление {this.props.pressure}</p>
-                        <p>Восход солнца {this.props.sunrise}</p>
-                        <p>Заход солнца {this.props.sunset}</p>
+                        <div>{this.langCityCountry[this.props.language]} {this.props.city}, {this.props.country}</div>
+                        <div>{this.langTempure[this.props.language]} {this.props.temp}</div>
+                        <div>{this.langPressure[this.props.language]} {this.props.pressure}</div>
+                        <div>{this.langSunrise[this.props.language]} {this.props.sunrise}</div>
+                        <div>{this.langSunset[this.props.language]} {this.props.sunset}</div>
                     </div>
                 }
             </div>
         );
     }
-}*/
+}
 
-const Weather = props => (
+/*const Weather = props => (
     <div>
         <p>{props.error}</p>
         {props.city &&
@@ -32,6 +38,6 @@ const Weather = props => (
             </div>
         }
     </div>
-);
+);*/
 
 export default Weather;
